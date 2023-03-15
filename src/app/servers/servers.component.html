@@ -1,9 +1,16 @@
 <label>Server Name</label>
 <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
-<input type="text" class="form-control" [(ngModel)]="serverName">
-<p>Server Name: {{ serverName }}</p>
 
-<button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer">Add Server</button>
+<!-- String interpolation only works on string [innerText] = "serverCreationStatus" or 
+{{String}} -->
+<!-- Property binding  [disabled] = "!allowNewServer"-->
+<!-- Event binding (click)="onCreateServer()" -->
+<!-- Two way binding [(ngModel)]="serverName" -->
+
+<input type="text" class="form-control" [(ngModel)]="serverName" placeholder="Server Name">
+<input type="text" class="form-control" [(ngModel)]="userName" placeholder="User Name">
+<button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer"> Add Server</button>
+<button class="btn btn-primary" [disabled]="userName.length === 0" >New User</button>
 <p [innerText]="serverCreationStatus"></p>
 <app-server></app-server>
 <app-server></app-server>
