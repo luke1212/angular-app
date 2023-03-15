@@ -9,7 +9,7 @@ export class ServerComponent {
   serverStatus = 'offline';
 
   constructor() {
-    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    // this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
   }
 
   getServerStatus() {
