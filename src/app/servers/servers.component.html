@@ -12,5 +12,5 @@
 <button class="btn btn-primary" [disabled]="userName.length === 0" >New User</button>
 <!-- <p [innerText]="serverCreationStatus"></p> -->
 <p *ngIf="isServerCreated">{{serverCreationStatus}}</p>
-<app-server></app-server>
-<app-server></app-server>
+
+<app-server *ngFor="let server of servers"></app-server>
