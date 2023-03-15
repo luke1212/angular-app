@@ -11,6 +11,7 @@
 <input type="text" class="form-control" [(ngModel)]="userName" placeholder="User Name">
 <button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer"> Add Server</button>
 <button class="btn btn-primary" [disabled]="userName.length === 0" >New User</button>
-<p [innerText]="serverCreationStatus"></p>
+<!-- <p [innerText]="serverCreationStatus"></p> -->
+<p *ngIf="isServerCreated">{{serverCreationStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
