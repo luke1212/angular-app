@@ -10,7 +10,14 @@
 <input type="text" class="form-control" [(ngModel)]="userName" placeholder="User Name">
 <button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer"> Add Server</button>
 <button class="btn btn-primary" [disabled]="userName.length === 0" >New User</button>
+<button class="btn btn-primary" (click)="onToggleDetails()">Toggle Details</button>
 <!-- <p [innerText]="serverCreationStatus"></p> -->
 <p *ngIf="isServerCreated">{{serverCreationStatus}}</p>
+
+<p *ngIf="isToggle">Toggle Count</p>
+<p *ngFor="let count of toggleDetails" 
+[ngStyle]="{backgroundColor: onChangeBackgroundColor()}"
+[ngClass]="{biggerThan5: toggleDetails.length >= 5 }">Toggled {{count}}</p>
+
 
 <app-server *ngFor="let server of servers"></app-server>
