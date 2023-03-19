@@ -36,17 +36,6 @@ export class ServersComponent {
     }, 2000);
   }
 
-  async onSubmit() {
-    this.response = await this.openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: this.questions,
-      temperature: 0,
-      max_tokens: 1000,
-    });
-    console.log(this.response);
-    this.gptOutput = this.response.data.choices[0].text;
-  }
-
   onCreateServer() {
     this.isServerCreated = true;
     this.servers.push(this.serverName);
@@ -58,7 +47,18 @@ export class ServersComponent {
     this.toggleDetails.push(this.toggleDetails.length + 1);
   }
 
-  onChangeBackgroundColor() {
-    return this.toggleDetails.length >= 5 ? 'blue' : 'white';
+  onChangeBackgroundColor(i) {
+    return i >= 4 ? 'blue' : 'white';
+  }
+
+  async onSubmit() {
+    this.response = await this.openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: this.questions,
+      temperature: 0,
+      max_tokens: 1000,
+    });
+    console.log(this.response);
+    this.gptOutput = this.response.data.choices[0].text;
   }
 }

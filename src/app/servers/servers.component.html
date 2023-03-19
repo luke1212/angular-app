@@ -6,21 +6,49 @@
 <!-- Event binding (click)="onCreateServer()" -->
 <!-- Two way binding [(ngModel)]="serverName" -->
 
-<!-- <input type="text" class="form-control" [(ngModel)]="serverName" placeholder="Server Name">
-<input type="text" class="form-control" [(ngModel)]="userName" placeholder="User Name">
-<button class="btn btn-primary" (click)="onCreateServer()" [disabled]="!allowNewServer"> Add Server</button>
-<button class="btn btn-primary" [disabled]="userName.length === 0" >New User</button>
-<button class="btn btn-primary" (click)="onToggleDetails()">Toggle Details</button>-->
-<input type = "text" class = "form-control" [(ngModel)]="questions"  placeholder="Ask Questions">
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+  placeholder="Server Name"
+/>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="userName"
+  placeholder="User Name"
+/>
+<button
+  class="btn btn-primary"
+  (click)="onCreateServer()"
+  [disabled]="!allowNewServer"
+>
+  Add Server
+</button>
+<button class="btn btn-primary" [disabled]="userName.length === 0">
+  New User
+</button>
+<button class="btn btn-primary" (click)="onToggleDetails()">
+  Toggle Details
+</button>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="questions"
+  placeholder="Ask Questions"
+/>
 <button class="btn btn-primary" (click)="onSubmit()">ChatGPT</button>
-<p>{{gptOutput}}</p>
-<!-- <p [innerText]="serverCreationStatus"></p>
-<p *ngIf="isServerCreated">{{serverCreationStatus}}</p>
+<p>{{ gptOutput }}</p>
+<p [innerText]="serverCreationStatus"></p>
+<p *ngIf="isServerCreated">{{ serverCreationStatus }}</p>
 
 <p *ngIf="isToggle">Toggle Count</p>
-<p *ngFor="let count of toggleDetails" 
-[ngStyle]="{backgroundColor: onChangeBackgroundColor()}"
-[ngClass]="{biggerThan5: toggleDetails.length >= 5 }">Toggled {{count}}</p>
+<p
+  *ngFor="let count of toggleDetails, let i = index"
+  [ngStyle]="{ backgroundColor: onChangeBackgroundColor(i) }"
+  [ngClass]="{ biggerThan5: i >= 4 }"
+>
+  Toggled {{ count }}
+</p>
 
-
-<app-server *ngFor="let server of servers"></app-server> -->
+<app-server *ngFor="let server of servers"></app-server>
