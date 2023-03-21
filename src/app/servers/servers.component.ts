@@ -58,7 +58,6 @@ export class ServersComponent {
       temperature: 0,
       max_tokens: 1000,
     });
-    console.log(this.response);
     this.gptOutput = this.response.data.choices[0].text;
   }
 }
