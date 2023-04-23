@@ -6,7 +6,7 @@
 <!-- Event binding (click)="onCreateServer()" -->
 <!-- Two way binding [(ngModel)]="serverName" -->
 
-<input
+<!-- <input
   type="text"
   class="form-control"
   [(ngModel)]="serverName"
@@ -30,7 +30,7 @@
 </button>
 <button class="btn btn-primary" (click)="onToggleDetails()">
   Toggle Details
-</button>
+</button> -->
 <input
   type="text"
   class="form-control"
@@ -39,7 +39,7 @@
 />
 <button class="btn btn-primary" (click)="onSubmit()">ChatGPT</button>
 <p>{{ gptOutput }}</p>
-<p [innerText]="serverCreationStatus"></p>
+<!-- <p [innerText]="serverCreationStatus"></p>
 <p *ngIf="isServerCreated">{{ serverCreationStatus }}</p>
 
 <p *ngIf="isToggle">Toggle Count</p>
@@ -49,6 +49,6 @@
   [ngClass]="{ biggerThan5: i >= 4 }"
 >
   Toggled {{ count }}
-</p>
-
-<app-server *ngFor="let server of servers"></app-server>
+</p> -->
+<!-- 
+<app-server *ngFor="let server of servers"></app-server> -->
