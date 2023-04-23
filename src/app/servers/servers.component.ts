@@ -59,5 +59,6 @@ export class ServersComponent {
       max_tokens: 1000,
     });
     this.gptOutput = this.response.data.choices[0].text;
+    this.questions = '';
   }
 }
